@@ -1,0 +1,135 @@
+<main class="main-wrap">
+  {% assign media = {{include.pages}} %} 
+  {% for element in media %} 
+  {% if element.media_type == 'image' %}
+  <div
+    class="container"
+    id="osd-container-{{ element.title }}"
+    style="
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <div id="{{ element.title }}"></div>
+  </div>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      var img = new Image();
+      img.src =
+        "{% if element._path contains 'assets' or element._path contains 'media_files' %} {{ site.baseurl }}{{ element._path }} {% else %} {{ element._path }} {% endif %}";
+
+      img.onload = function () {
+        var width = img.width / 2;
+        var height = img.height / 2;
+
+        // Set the container size dynamically
+        var osdContainer = document.getElementById(
+          "osd-container-{{ element.title }}"
+        );
+        osdContainer.style.width = width + "px";
+        osdContainer.style.height = height + "px";
+
+        OpenSeadragon({
+          id: "osd-container-{{ element.title }}",
+          prefixUrl:
+            "{{ site.baseurl }}/configuration_files/assets/img/openseadragon/",
+          maxZoomLevel: 100,
+          defaultZoomLevel: 1,
+          tileSources: {
+            type: "image",
+            url: img.src,
+          },
+        });
+      };
+    });
+  </script>
+
+  <div class="description-wrapper">
+    <p>
+      Title: {{ element._title }}<br />
+      Creator: {{ element.creator }}<br />
+      Date: {{ element._date }}
+    </p>
+    <a href="{{ site.baseurl }}{{ element.url }}"
+      ><button class="description_btn">Detailed description</button></a
+    >
+  </div>
+
+  {% elsif element.media_type == 'video' and (element._path contains 'assets' or element.path contains 'media_files')%}
+  <div class="video-container">
+    <video
+      src="{{ site.baseurl }}{{ element._path }}" controls
+      class="page_video"
+    ></video>
+    <div>
+      <div class="description-wrapper">
+        <p>
+          Title: {{ element._title }}<br />
+          Creator: {{ element.creator }}<br />
+          Date: {{ element._date }}
+        </p>
+        <a href="{{ site.baseurl }}{{ element.url }}"
+          ><button class="description_btn">Detailed description</button></a
+        >
+      </div>
+    </div>
+  </div>
+
+  {% elsif element.media_type == 'video' and element._path contains 'youtube' %}
+  <div class="youtube-video-container">
+    <iframe
+      src="{{ element._path }}" controls
+      class="page_youtube_video" style="border: 0; object-fit: contain;"
+    ></iframe>
+    <div>
+      <div class="description-wrapper">
+        <p>
+          Title: {{ element._title }}<br />
+          Creator: {{ element.creator }}<br />
+          Date: {{ element._date }}
+        </p>
+        <a href="{{ site.baseurl }}{{ element.url }}"
+          ><button class="description_btn">Detailed description</button></a
+        >
+      </div>
+    </div>
+  </div>
+  
+  {% else %}
+  <div class="container">
+    <iframe
+      src="{% if element._path contains 'assets' or element._path contains 'media_files'%} {{ site.baseurl }}{{ element._path }} {% else %} {{ element._path }} {% endif %}"
+      class="page_image" style="border: 0; width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain;"
+    ></iframe>
+    <div>
+      <div class="description-wrapper">
+        <p>
+          Title: {{ element._title }}<br />
+          Creator: {{ element.creator }}<br />
+          Date: {{ element._date }}
+        </p>
+        <a href="{{ site.baseurl }}{{ element.url }}"
+          ><button class="description_btn">Detailed description</button></a
+        >
+      </div>
+    </div>
+  </div>
+  {% endif %} {% endfor %}
+</main>
+
+<!-- Add this script before the closing body tag -->
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    var videos = document.querySelectorAll('.page_video');
+    videos.forEach(function(video) {
+      video.addEventListener('loadedmetadata', function() {
+        var container = video.closest('.video-container');
+        container.style.width = video.videoWidth + 'px';
+        container.style.height = video.videoHeight + 'px';
+      });
+    });
+  });
+</script>

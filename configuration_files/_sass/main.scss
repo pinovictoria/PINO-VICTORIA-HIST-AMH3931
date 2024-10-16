@@ -1,0 +1,357 @@
+// Basic
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: "Arial"; 
+}
+
+.footnotes {
+  font-size: 1.0em;
+  color: #476345;
+  font-family: "Arial";
+}
+
+// Header
+
+header {
+  font-family: "Arial"; 
+  text-align: center;
+  padding: 15px;
+}
+
+// home page
+
+.title_card {
+  font-family: "Arial"; 
+  // display: block;
+  // position: absolute;
+  bottom: 0;
+  padding: 26.8rem 7.2rem 3.6rem 7.2rem;
+  text-align: center;
+}
+
+.header_main{
+  color: white;
+  font-family: "Arial"; 
+}
+
+h1.header_main{
+  font-size: 2.0em;
+}
+
+h2.header_main{
+  font-size: 1.5em;
+  font-family: "Arial"; 
+}
+
+// Navigation
+  
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1.50em;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  #navigation {
+    
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  .navbutton {
+    position: fixed;
+    top: 0;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 15px;
+  }
+
+button{
+  font-family: "Arial";
+    cursor: pointer;
+    background-color: transparent;
+    height: 50px;
+    width: 200px;
+    color: white;
+    font-size: 1.25em;
+    transition-duration: 0.4s;
+    border:none;
+
+}
+
+button:hover {
+  background-color: rgba(245, 246, 252, 0.52);
+}
+
+#btn {
+  color:white
+}
+
+// Search
+
+#search_icon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding-top: 25px;
+  padding-right: 30px;
+}
+
+#search {
+  border: 1px solid grey;
+  border-radius: 5px;
+  font-family: "Arial";
+  color:#476345; 
+  font-size: 21px;
+  width: 100%;
+  height: 50px;
+}
+
+::placeholder {
+	
+  color:#476345;
+  font-size: 110%;
+  padding-right: 200px;
+  outline: none !important; 
+}
+
+
+
+// Content
+
+p {
+  font-family: "Arial";
+  font-size: 1.0em;
+}
+
+.search_result{
+  font-size: 1.0em;
+  font-style: italic;
+}
+
+h1 {
+  font-family: "Arial";
+}
+
+a {
+  color:#476345;
+  font-family: "Arial";  
+  text-decoration: none !important;
+}
+
+.title{
+  font-size: 2.0em;
+  }
+
+.content {
+  margin-left:20%;
+  margin-right:20%;
+  padding-bottom: 100px;
+}
+
+// Image
+
+img.page_image{
+  // width: 300px;
+  // height: 300px;
+  // object-fit: contain;
+  // margin: auto;
+  // max-width: 100%;
+  // max-height: 100%;
+  // padding-bottom: 10px;
+  // display: block; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  // width: 50%;
+}
+
+.container{
+  height: 500px;
+  margin-bottom:150px;
+}
+
+.main-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  // margin-bottom: 50px;
+}
+
+.description-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+
+  // grid-gap: 20px;
+}
+
+// video
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.page_video { //was page_video
+  display: block;
+  border: 0;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+// Youtube Video
+
+.youtube-video-container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page_youtube_video {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// .dropdown {
+//   position: relative;
+//   display: inline-block;
+// }
+
+// .dropdown-content {
+//   display: none;
+//   position: absolute;
+//   // background-color: #f9f9f9;
+//   // min-width: 160px;
+//   // box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+// }
+
+// .dropdown:hover .dropdown-content {
+//   display: block;
+// }
+
+// .media_tabs{
+//   grid-template-columns: 100px 100px;
+//   // display:grid;
+//   grid-column-gap: 0;
+//   grid-row-gap: 0;
+// }
+
+.description_btn{
+  font-family: "Arial";
+  font-size: 1.0em;
+  cursor: pointer;
+  background-color: transparent;
+  color:#476345;  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px; 
+}
+
+button:hover.description_btn{
+    background-color: rgba(139, 134, 134, 0.52);
+}
+
+button:focus.description_btn{
+  background:rgba(139, 134, 134, 0.52);
+}
+
+.media_description{
+  display: grid;
+ align-items: center; 
+ grid-template-columns: 1fr 1fr;
+ column-gap: 25px;
+}
+
+img {
+  max-width: 100%;
+  max-height:100%;
+}
+
+iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 420px; //420px
+  height: 315px; //315px
+}
+
+.timeline-iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 80%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+//   Footer
+  
+#footer {
+    font-family: "Arial"; 
+    font-size: 1.0em; 
+    color: #476345;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    // background-color: #dbd8d3;
+    width: 100%;
+    height: 20%;
+     
+    text-align:justify;      
+}
+
+a.info {
+  font-family: "Arial";
+  font-size: 1.0em;
+  padding: 0px;
+}

@@ -1,0 +1,39 @@
+title: Title
+email: your-email@example.com
+description: by Authors
+
+baseurl: "/ScholarMinPub" # the subpath of your site. Change it if the name of your repository is other than "mindoc"
+
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Custom directory structure
+layouts_dir: configuration_files/_layouts
+includes_dir: configuration_files/_includes
+
+sass:
+  load_paths:
+    - configuration_files/_sass
+
+assets:
+  sources:
+    - configuration_files/assets/images
+    - configuration_files/assets/js
+    - configuration_files/assets/css
+    - media_files/images
+    - media_files/audio
+    - media_files/video
+    - media_files/pdfs
+
+collections_dir: media_files
+
+
+# Build settings
+
+plugins:
+  - jekyll-feed
+
+collections:
+  media_metadata:
+    output: true
+    layout: 'image_description'

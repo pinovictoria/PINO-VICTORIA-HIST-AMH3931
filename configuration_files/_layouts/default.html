@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>{{ site.title }}</title>
+        <link rel="stylesheet" href="{{ site.baseurl }}/configuration_files/assets/css/styles.css">
+
+        <style>
+            #openseadragon1 {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+        </style>
+        <script src="{{ site.baseurl }}/configuration_files/assets/js/openseadragon.min.js"></script>
+    </head>
+    <body>
+            {% include header.html %}
+
+            {% include sidenavbar.html %}
+            
+            <div class="content">
+            {{ content }}
+
+            {% include backforwardpagenav.html %}
+            
+            </div>
+    </body>
+   
+    
+<script src="{{ site.baseurl }}/configuration_files/assets/js/nav.js"></script>
+</html>
